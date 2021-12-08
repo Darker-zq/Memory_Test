@@ -22,10 +22,10 @@ class Ui_SimpleWindow(object):
         self.centralwidget = QtWidgets.QWidget(SimpleWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.textBrowser_left = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_left.setGeometry(QtCore.QRect(50, 110, 200, 200))
+        self.textBrowser_left.setGeometry(QtCore.QRect(50, 130, 200, 171))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
-        font.setPointSize(80)
+        font.setPointSize(100)
         font.setBold(True)
         font.setWeight(75)
         self.textBrowser_left.setFont(font)
@@ -37,10 +37,10 @@ class Ui_SimpleWindow(object):
         self.label_title.setFont(font)
         self.label_title.setObjectName("label_title")
         self.textBrowser_right = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_right.setGeometry(QtCore.QRect(360, 110, 200, 200))
+        self.textBrowser_right.setGeometry(QtCore.QRect(360, 130, 200, 171))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
-        font.setPointSize(80)
+        font.setPointSize(100)
         font.setBold(True)
         font.setWeight(75)
         self.textBrowser_right.setFont(font)
@@ -118,17 +118,12 @@ class Ui_SimpleWindow(object):
     def retranslateUi(self, SimpleWindow):
         _translate = QtCore.QCoreApplication.translate
         SimpleWindow.setWindowTitle(_translate("SimpleWindow", "MainWindow"))
-        self.textBrowser_left.setHtml(_translate("SimpleWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Times New Roman\'; font-size:80pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.label_title.setText(_translate("SimpleWindow", "简单测试"))
         self.textBrowser_right.setHtml(_translate("SimpleWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Times New Roman\'; font-size:80pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'Times New Roman\'; font-size:100pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:80pt;\"><br /></p></body></html>"))
         self.pbt_start1.setText(_translate("SimpleWindow", "开始测试"))
         self.lable_plus.setText(_translate("SimpleWindow", "+"))
         self.label_equal.setText(_translate("SimpleWindow", "="))
@@ -138,15 +133,3 @@ class Ui_SimpleWindow(object):
         self.pbt_back1.setText(_translate("SimpleWindow", "返回主界面"))
         self.pbt_over1.setText(_translate("SimpleWindow", "结束测试"))
 
-
-    def handle_click(self):
-        if not self.isVisible():
-            self.show()
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QMainWindow()
-    ui = Ui_SimpleWindow()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())

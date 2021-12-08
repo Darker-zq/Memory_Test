@@ -12,7 +12,7 @@ class runComplex(QtWidgets.QMainWindow):
         self.Simple.setupUi(self)
 
         self.logo = QIcon('./cumtlogo.png')
-        self.setWindowTitle("简单测试")
+        self.setWindowTitle("复杂测试")
         self.setWindowIcon(self.logo)
 
         self.Simple.pbt_back1.clicked.connect(self.handle_close)
