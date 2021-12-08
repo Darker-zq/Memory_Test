@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>13</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="bt_complex">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>90</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>复杂测试</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_exit">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>290</y>
+      <width>581</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_middle">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>中等测试</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_simple">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>90</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>简单测试</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_main">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>记忆测试程序主界面</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

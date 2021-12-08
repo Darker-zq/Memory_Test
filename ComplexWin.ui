@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ComplexWindow</class>
+ <widget class="QMainWindow" name="ComplexWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1123</width>
+    <height>832</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>宋体</family>
+    <pointsize>20</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="textBrowser_left">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>80</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:80pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_title">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>40</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>复杂测试</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbt_start1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>700</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>开始测试</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>510</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_tip1">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>160</y>
+      <width>271</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>271</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>    数字出现的频率是40次/分钟，每组数字先后在五个位置随机出现，每个数字显示时间为0.1秒，给您1.2秒计算和填写的时间。即每1.5秒计算一组数字。</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_tips">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>110</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>注意：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_tip2">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>310</y>
+      <width>271</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>271</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>    点击开始后，5秒后出现第一组数字，请保证鼠标光标放在右侧的输入栏中。</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbt_back1">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>700</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>返回主界面</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbt_over1">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>700</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>结束测试</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser_left_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>430</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>80</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:80pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser_left_3">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>270</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>80</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:80pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser_left_4">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>110</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>80</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:80pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser_left_5">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>430</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>80</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:80pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
