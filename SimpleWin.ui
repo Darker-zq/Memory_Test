@@ -28,7 +28,7 @@
    <widget class="QTextBrowser" name="textBrowser_left">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>150</x>
       <y>130</y>
       <width>200</width>
       <height>171</height>
@@ -64,7 +64,7 @@
    <widget class="QTextBrowser" name="textBrowser_right">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>500</x>
       <y>130</y>
       <width>200</width>
       <height>171</height>
@@ -104,59 +104,11 @@ p, li { white-space: pre-wrap; }
      <string>开始测试</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lable_plus">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>190</y>
-      <width>31</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>40</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_equal">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>190</y>
-      <width>31</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>40</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>=</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>180</y>
-      <width>161</width>
-      <height>71</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_tip1">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>370</y>
+      <y>350</y>
       <width>731</width>
       <height>61</height>
      </rect>
@@ -178,7 +130,7 @@ p, li { white-space: pre-wrap; }
      <enum>Qt::RightToLeft</enum>
     </property>
     <property name="text">
-     <string>    数字出现的频率是20次/分钟，每组数字显示时间为0.5秒，给您2.5秒计算和填写的时间。即每3秒计算一组数字。</string>
+     <string>    1.数字出现的频率是20次/分钟，每组的两个数字显示的间隔时间是0.5秒。</string>
     </property>
     <property name="textFormat">
      <enum>Qt::PlainText</enum>
@@ -191,7 +143,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>320</y>
+      <y>300</y>
       <width>71</width>
       <height>51</height>
      </rect>
@@ -203,41 +155,6 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>注意：</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_tip2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>430</y>
-      <width>731</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>271</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::RightToLeft</enum>
-    </property>
-    <property name="text">
-     <string>    点击开始后，5秒后出现第一组数字，请保证鼠标光标放在右侧的输入栏中。</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::PlainText</enum>
-    </property>
-    <property name="wordWrap">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pbt_back1">
@@ -274,6 +191,41 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>结束测试</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_tip1_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>400</y>
+      <width>731</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>271</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>2.点击【开始测试】按钮，开始测试，3秒后出现第一组数字，请您做好准备。</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
