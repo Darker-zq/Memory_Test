@@ -72,6 +72,12 @@ class runMiddle(QtWidgets.QMainWindow):
         file_name = "中等记忆" + time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time())).replace(":",
                                                                                                       "-") + ".xls"
         workbook.save(file_name)
+        # 清空储存数组
+        self.Middle.textBrowser_left.clear()
+        self.Middle.textBrowser_right.clear()
+        num1.clear()
+        num2.clear()
+        sumnum.clear()
     def getinput(self):
         text = self.Middle.lineEdit.text()
         sumnum.append(text)

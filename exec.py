@@ -25,7 +25,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # ###################### 窗口初始化 ######################
         # 设置窗口名称和图标
-        self.setWindowTitle('记忆测试系统v1.0')
+        self.setWindowTitle('记忆测试系统v1.2')
         self.setWindowIcon(self.logo)
 
         #按钮事件

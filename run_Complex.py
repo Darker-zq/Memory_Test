@@ -3,7 +3,7 @@ import time
 import xlwt
 import random
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import pyqtSignal, QThread
+from PyQt5.QtCore import pyqtSignal, QThread,QTimer
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget
 from ComplexWin import Ui_ComplexWindow
@@ -20,8 +20,6 @@ class runComplex(QtWidgets.QMainWindow):
         self.logo = QIcon('./cumtlogo.png')
         self.setWindowTitle("复杂测试")
         self.setWindowIcon(self.logo)
-
-        self.Complex.pbt_back1.clicked.connect(self.handle_close)
         #self.Complex.pbt_back1.clicked.connect()
         # 创建线程实例
         self.workThread = workThread()
@@ -38,6 +36,8 @@ class runComplex(QtWidgets.QMainWindow):
         #self.flag = 1
         self.flag = random.choice(range(20))
         print("flag=",self.flag)
+        self.time = QTimer()
+        self.time.timeout.connect(self.upgradeProgress)
         #1
         if self.flag == 0: #12
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num1))
@@ -47,12 +47,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_2.clear()
-
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         #2
         if self.flag ==1:  #21
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num1))
@@ -62,12 +57,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_2.clear()
-
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         #3
         if self.flag ==2: ##13
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num1))
@@ -77,11 +67,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_3.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         #4
         if self.flag ==3: ##31
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num1))
@@ -91,11 +77,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_3.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         #5
         if self.flag == 4:  ##14
@@ -106,11 +88,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_4.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 6
         if self.flag == 5:  ##41
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num1))
@@ -120,11 +98,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_4.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         # 7
         if self.flag == 6:  ##15
@@ -135,11 +109,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 8
         if self.flag == 7:  ##51
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
@@ -149,11 +119,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_1.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         #9
         if self.flag == 8:  ##23
@@ -164,11 +130,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_2.clear()
-            self.Complex.textBrowser_3.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 10
         if self.flag == 9:  ##32
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num1))
@@ -178,11 +140,7 @@ class runComplex(QtWidgets.QMainWindow):
             time.sleep(0.15)
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num2))
             QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_2.clear()
-            self.Complex.textBrowser_3.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         # 11
         if self.flag == 10:  ##24
@@ -192,12 +150,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_2.clear()
-            self.Complex.textBrowser_4.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 12
         if self.flag == 11:  ##42
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num1))
@@ -206,12 +159,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_2.clear()
-            self.Complex.textBrowser_4.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         # 13
         if self.flag == 12:  ##25
@@ -221,12 +169,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_2.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 14
         if self.flag == 13:  ##52
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
@@ -235,12 +178,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_2.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         # 15
         if self.flag == 14:  ##34
@@ -250,12 +188,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_3.clear()
-            self.Complex.textBrowser_4.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 16
         if self.flag == 15:  ##43
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num1))
@@ -264,12 +197,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_3.clear()
-            self.Complex.textBrowser_4.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         # 17
         if self.flag == 16:  ##35
@@ -279,12 +207,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_3.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 18
         if self.flag == 17:  ##53
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
@@ -293,12 +216,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_3.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
         # 19
         if self.flag == 18:  ##45
@@ -308,12 +226,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_4.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
         # 20
         if self.flag == 19:  ##54
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
@@ -322,12 +235,7 @@ class runComplex(QtWidgets.QMainWindow):
             QApplication.processEvents()
             time.sleep(0.15)
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num2))
-            QApplication.processEvents()
-            time.sleep(1.35)
-            self.Complex.textBrowser_4.clear()
-            self.Complex.textBrowser_5.clear()
-            print("num2_show", time.ctime())
-            print("clear", time.ctime(), "\n")
+            self.time.start(1350)
 
     def workstart(self):
         self.workThread.start()
@@ -339,6 +247,8 @@ class runComplex(QtWidgets.QMainWindow):
         print(num1)
         print("num2的长度",len(num2))
         print(num2)
+        print("sum的长度", len(num2))
+        print(sumnum)
         # 创建一个workbook 设置编码
         workbook = xlwt.Workbook(encoding='utf-8')
         # 创建一个worksheet
@@ -358,13 +268,30 @@ class runComplex(QtWidgets.QMainWindow):
                                                                                                       "-") + ".xls"
         workbook.save(file_name)
 
+        # 清空储存数组
+        self.Complex.textBrowser_1.clear()
+        self.Complex.textBrowser_2.clear()
+        self.Complex.textBrowser_3.clear()
+        self.Complex.textBrowser_4.clear()
+        self.Complex.textBrowser_5.clear()
+        num1.clear()
+        num2.clear()
+        sumnum.clear()
+        self.time.stop()
     def getinput(self):
         text = self.Complex.lineEdit.text()
         sumnum.append(text)
         self.Complex.lineEdit.clear()
-        QApplication.processEvents()
         print(sumnum)
-
+    #实时刷新界面
+    def upgradeProgress(self):
+        self.Complex.textBrowser_1.clear()
+        self.Complex.textBrowser_2.clear()
+        self.Complex.textBrowser_3.clear()
+        self.Complex.textBrowser_4.clear()
+        self.Complex.textBrowser_5.clear()
+        print("num2_show", time.ctime())
+        print("clear", time.ctime(), "\n")
     def handle_click(self):
         if not self.isVisible():
             self.show()

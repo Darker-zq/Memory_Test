@@ -70,12 +70,16 @@ class runSimple(QtWidgets.QMainWindow):
             worksheet.write(i+1, 0, num1[i])
             worksheet.write(j+1, 1, num2[j])
             worksheet.write(k+1, 2, sumnum[k])
-
         # 保存
         file_name = "简单记忆" + time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time())).replace(":",
                                                                                                       "-") + ".xls"
         workbook.save(file_name)
-
+        #清空储存数组
+        self.Simple.textBrowser_left.clear()
+        self.Simple.textBrowser_right.clear()
+        num1.clear()
+        num2.clear()
+        sumnum.clear()
     def getinput(self):
         text = self.Simple.lineEdit.text()
         sumnum.append(text)
