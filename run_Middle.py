@@ -9,6 +9,8 @@ from PyQt5.QtWidgets import QApplication, QWidget,QDialog
 from MiddleWin import Ui_MiddleWindow
 
 class runMiddle(QtWidgets.QMainWindow):
+    global sumnum
+    sumnum = []
     def __init__(self):
         # super()构造器方法返回父级的对象。__init__()方法是构造器的一个方法。
         super().__init__()
@@ -28,6 +30,7 @@ class runMiddle(QtWidgets.QMainWindow):
         self.Middle.pbt_start1.clicked.connect(self.workstart)
         self.Middle.pbt_over1.clicked.connect(self.workover)
         self.Middle.pbt_back1.clicked.connect(self.handle_close)
+        self.Middle.lineEdit.returnPressed.connect(self.getinput)
     #显示左侧文本槽函数
     def shownum1(self):
         self.Middle.textBrowser_left.clear()
@@ -55,22 +58,33 @@ class runMiddle(QtWidgets.QMainWindow):
         workbook = xlwt.Workbook(encoding='utf-8')
         # 创建一个worksheet
         worksheet = workbook.add_sheet('My Worksheet')
-        for i,j in zip(range(len(num1)),range(len(num2))):
+        worksheet.write(0, 0, '显示数字1')
+        worksheet.write(0, 1, '显示数字2')
+        worksheet.write(0, 2, '输入结果')
+        for i,j,k in zip(range(len(num1)),range(len(num2)),range(len(sumnum))):
             # 写入excel
             # 参数对应 行, 列, 值
-            worksheet.write(i, 0, num1[i])
-            worksheet.write(j, 1, num2[j])
+            worksheet.write(i+1, 0, num1[i])
+            worksheet.write(j+1, 1, num2[j])
+            worksheet.write(k+1, 2, sumnum[k])
 
         # 保存
         file_name = "中等记忆" + time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time())).replace(":",
                                                                                                       "-") + ".xls"
         workbook.save(file_name)
+    def getinput(self):
+        text = self.Middle.lineEdit.text()
+        sumnum.append(text)
+        self.Middle.lineEdit.clear()
+        print(sumnum)
     def handle_click(self):
         if not self.isVisible():
             self.show()
     def handle_close(self):
         self.workThread.terminate()
         self.close()
+
+
 #TextBroswer的显示数字线程类
 class workThread(QThread):
     # 通过类成员对象定义信号
@@ -94,16 +108,9 @@ class workThread(QThread):
             num1.append(self.num1)
             num2.append(self.num2)
 
-
-
-
-
-
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     # 创建并显示窗口
-    SimWindow = runMiddle()
-    SimWindow.show()
+    MidWindow = runMiddle()
+    MidWindow.show()
     sys.exit(app.exec_())

@@ -8,6 +8,8 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget
 from ComplexWin import Ui_ComplexWindow
 class runComplex(QtWidgets.QMainWindow):
+    global sumnum
+    sumnum =[]
     def __init__(self):
         # super()构造器方法返回父级的对象。__init__()方法是构造器的一个方法。
         super().__init__()
@@ -29,6 +31,7 @@ class runComplex(QtWidgets.QMainWindow):
         self.Complex.pbt_start1.clicked.connect(self.workstart)
         self.Complex.pbt_over1.clicked.connect(self.workover)
         self.Complex.pbt_back1.clicked.connect(self.handle_close)
+        self.Complex.lineEdit.returnPressed.connect(self.getinput)
         # 显示左侧文本槽函数
 
     def shownum(self):
@@ -51,7 +54,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         #2
-        elif self.flag ==1:  #21
+        if self.flag ==1:  #21
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_1.clear()
@@ -66,7 +69,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         #3
-        elif self.flag ==2: ##13
+        if self.flag ==2: ##13
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_3.clear()
@@ -80,7 +83,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         #4
-        elif self.flag ==3: ##31
+        if self.flag ==3: ##31
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_1.clear()
@@ -95,7 +98,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         #5
-        elif self.flag == 4:  ##14
+        if self.flag == 4:  ##14
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_4.clear()
@@ -109,7 +112,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 6
-        elif self.flag == 5:  ##41
+        if self.flag == 5:  ##41
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_1.clear()
@@ -124,7 +127,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         # 7
-        elif self.flag == 6:  ##15
+        if self.flag == 6:  ##15
             self.Complex.textBrowser_1.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_5.clear()
@@ -138,7 +141,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 8
-        elif self.flag == 7:  ##51
+        if self.flag == 7:  ##51
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_1.clear()
@@ -153,7 +156,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         #9
-        elif self.flag == 8:  ##23
+        if self.flag == 8:  ##23
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_3.clear()
@@ -167,7 +170,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 10
-        elif self.flag == 9:  ##32
+        if self.flag == 9:  ##32
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_2.clear()
@@ -182,7 +185,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         # 11
-        elif self.flag == 10:  ##24
+        if self.flag == 10:  ##24
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_4.clear()
@@ -196,7 +199,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 12
-        elif self.flag == 11:  ##42
+        if self.flag == 11:  ##42
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_2.clear()
@@ -211,7 +214,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         # 13
-        elif self.flag == 12:  ##25
+        if self.flag == 12:  ##25
             self.Complex.textBrowser_2.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_5.clear()
@@ -225,7 +228,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 14
-        elif self.flag == 13:  ##52
+        if self.flag == 13:  ##52
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_2.clear()
@@ -240,7 +243,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         # 15
-        elif self.flag == 14:  ##34
+        if self.flag == 14:  ##34
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_4.clear()
@@ -254,7 +257,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 16
-        elif self.flag == 15:  ##43
+        if self.flag == 15:  ##43
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_3.clear()
@@ -269,7 +272,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         # 17
-        elif self.flag == 16:  ##35
+        if self.flag == 16:  ##35
             self.Complex.textBrowser_3.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_5.clear()
@@ -283,7 +286,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 18
-        elif self.flag == 17:  ##53
+        if self.flag == 17:  ##53
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_3.clear()
@@ -298,7 +301,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("clear", time.ctime(), "\n")
 
         # 19
-        elif self.flag == 18:  ##45
+        if self.flag == 18:  ##45
             self.Complex.textBrowser_4.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_5.clear()
@@ -312,7 +315,7 @@ class runComplex(QtWidgets.QMainWindow):
             print("num2_show", time.ctime())
             print("clear", time.ctime(), "\n")
         # 20
-        else: #self.flag == 19:  ##54
+        if self.flag == 19:  ##54
             self.Complex.textBrowser_5.setText("  " + str(self.workThread.num1))
             print("num1_show", time.ctime())
             self.Complex.textBrowser_4.clear()
@@ -340,16 +343,27 @@ class runComplex(QtWidgets.QMainWindow):
         workbook = xlwt.Workbook(encoding='utf-8')
         # 创建一个worksheet
         worksheet = workbook.add_sheet('My Worksheet')
-        for i, j in zip(range(len(num1)), range(len(num2))):
+        worksheet.write(0, 0, '显示数字1')
+        worksheet.write(0, 1, '显示数字2')
+        worksheet.write(0, 2, '输入结果')
+        for i, j, k in zip(range(len(num1)), range(len(num2)), range(len(sumnum))):
             # 写入excel
             # 参数对应 行, 列, 值
-            worksheet.write(i, 0, num1[i])
-            worksheet.write(j, 1, num2[j])
+            worksheet.write(i + 1, 0, num1[i])
+            worksheet.write(j + 1, 1, num2[j])
+            worksheet.write(k + 1, 2, sumnum[k])
 
         # 保存
         file_name = "复杂记忆" + time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time())).replace(":",
                                                                                                       "-") + ".xls"
         workbook.save(file_name)
+
+    def getinput(self):
+        text = self.Complex.lineEdit.text()
+        sumnum.append(text)
+        self.Complex.lineEdit.clear()
+        QApplication.processEvents()
+        print(sumnum)
 
     def handle_click(self):
         if not self.isVisible():
@@ -358,6 +372,7 @@ class runComplex(QtWidgets.QMainWindow):
     def handle_close(self):
         self.workThread.terminate()
         self.close()
+
 class workThread(QThread):
     # 通过类成员对象定义信号
     tb_left = pyqtSignal(str)

@@ -3,13 +3,15 @@ import xlwt
 import random
 import sched,time
 import datetime
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets,Qt
 from PyQt5.QtCore import pyqtSignal, QThread,QDateTime,QObject
 from PyQt5.QtGui import QIcon,QTextCursor
 from PyQt5.QtWidgets import QApplication, QWidget,QDialog
 from SimpleWin import Ui_SimpleWindow
 
 class runSimple(QtWidgets.QMainWindow):
+    global sumnum
+    sumnum = []
     def __init__(self):
         # super()构造器方法返回父级的对象。__init__()方法是构造器的一个方法。
         super().__init__()
@@ -29,6 +31,7 @@ class runSimple(QtWidgets.QMainWindow):
         self.Simple.pbt_start1.clicked.connect(self.workstart)
         self.Simple.pbt_over1.clicked.connect(self.workover)
         self.Simple.pbt_back1.clicked.connect(self.handle_close)
+        self.Simple.lineEdit.returnPressed.connect(self.getinput)
     #显示左侧文本槽函数
     def shownum1(self):
         self.Simple.textBrowser_left.clear()
@@ -41,8 +44,6 @@ class runSimple(QtWidgets.QMainWindow):
         time.sleep(0.5)
         self.Simple.textBrowser_right.setText("  " + str(self.workThread.num2))
         print("num2_show", time.ctime())
-
-
         print("clear",time.ctime(),"\n")
 
     def workstart(self):
@@ -54,20 +55,32 @@ class runSimple(QtWidgets.QMainWindow):
         print(num1)
         print("num2的长度",len(num2))
         print(num2)
+        print("sum的长度", len(sumnum))
+        print(sumnum)
         # 创建一个workbook 设置编码
         workbook = xlwt.Workbook(encoding='utf-8')
         # 创建一个worksheet
         worksheet = workbook.add_sheet('My Worksheet')
-        for i,j in zip(range(len(num1)),range(len(num2))):
+        worksheet.write(0, 0, '显示数字1')
+        worksheet.write(0, 1, '显示数字2')
+        worksheet.write(0, 2, '输入结果')
+        for i,j,k in zip(range(len(num1)),range(len(num2)),range(len(sumnum))):
             # 写入excel
             # 参数对应 行, 列, 值
-            worksheet.write(i, 0, num1[i])
-            worksheet.write(j, 1, num2[j])
+            worksheet.write(i+1, 0, num1[i])
+            worksheet.write(j+1, 1, num2[j])
+            worksheet.write(k+1, 2, sumnum[k])
 
         # 保存
         file_name = "简单记忆" + time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time())).replace(":",
                                                                                                       "-") + ".xls"
         workbook.save(file_name)
+
+    def getinput(self):
+        text = self.Simple.lineEdit.text()
+        sumnum.append(text)
+        self.Simple.lineEdit.clear()
+        print(sumnum)
     def handle_click(self):
         if not self.isVisible():
             self.show()
